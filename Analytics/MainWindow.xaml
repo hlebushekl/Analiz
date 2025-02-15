@@ -58,8 +58,8 @@
                             <chart:SfChart.SecondaryAxis>
                                 <chart:NumericalAxis/>
                             </chart:SfChart.SecondaryAxis>
-                            <chart:ColumnSeries  Label="Затраты" ItemsSource="{Binding Year}" XBindingPath="Months" YBindingPath="ProductA"/>
-                            <chart:ColumnSeries Label="Доход" ItemsSource="{Binding Year}" XBindingPath="Months" YBindingPath="ProductB"/>
+                            <chart:ColumnSeries  Label="Затраты" ItemsSource="{Binding Year}" XBindingPath="Year" YBindingPath="ProductA"/>
+                            <chart:ColumnSeries Label="Доход" ItemsSource="{Binding Year}" XBindingPath="Year" YBindingPath="ProductB"/>
                         </chart:SfChart>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">

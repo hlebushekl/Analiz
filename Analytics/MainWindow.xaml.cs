@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Analytics.Build;
+using Analytics.Property;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,7 +51,7 @@ namespace Analytics
 
         private void Custom_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            DataYear.Years = 2025;
         }
 
         private void SaveProduct_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

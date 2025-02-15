@@ -18,3 +18,5 @@ D:\Red\Analytics\bin\Debug\Syncfusion.SfChart.WPF.dll
 D:\Red\Analytics\bin\Debug\Syncfusion.SfChart.WPF.xml
 D:\Red\Analytics\obj\Debug\Analytics.csproj.CopyComplete
 D:\Red\Analytics\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Red\Analytics\bin\Debug\Test.accdb
+D:\Red\Analytics\obj\Debug\Analytics_Content.g.cs

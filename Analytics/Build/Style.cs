@@ -27,10 +27,10 @@ namespace Analytics.Build
         public static string nameTable = "Акции";
         public static UIElement Clone(string a, int i)
         {
-            string replace = a.Replace(Type, DataBase.TabelInsertion(i, 1));
-            replace = replace.Replace(Name, "Последняя: " + DataBase.TabelInsertion(i, 2));
-            replace = replace.Replace(Phone, "Максимальная: " + DataBase.TabelInsertion(i, 3));
-            replace = replace.Replace(Percent, "Минимальная: " + DataBase.TabelInsertion(i, 4));
+            string replace = a.Replace(Type, DataSerch.TabelInsertion(i, 1));
+            replace = replace.Replace(Name, "Последняя: " + DataSerch.TabelInsertion(i, 2));
+            replace = replace.Replace(Phone, "Максимальная: " + DataSerch.TabelInsertion(i, 3));
+            replace = replace.Replace(Percent, "Минимальная: " + DataSerch.TabelInsertion(i, 4));
 
             byte[] byteArray = Encoding.UTF8.GetBytes(replace);
             MemoryStream ms = new MemoryStream(byteArray);
