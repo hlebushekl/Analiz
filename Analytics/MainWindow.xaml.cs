@@ -14,6 +14,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Markup;
+using System.Diagnostics;
+using System.Xml;
+using System.IO;
+using System.Windows.Annotations.Storage;
 
 namespace Analytics
 {
@@ -36,17 +41,25 @@ namespace Analytics
 
         private void Mounth_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            CloneChartMonth.Visibility = Visibility.Visible;
+            string clone = XamlWriter.Save(CloneChartMonth);
+            Zone.Children.Clear();
+            Zone.Children.Add(DataChenge.Clone(clone));
+            CloneChartMonth.Visibility = Visibility.Hidden;
         }
 
         private void Quartal_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
 
         }
-
+            
         private void Yaer_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            CloneChartYear.Visibility = Visibility.Visible;
+            string clone = XamlWriter.Save(CloneChartYear);
+            Zone.Children.Clear();
+            Zone.Children.Add(DataChenge.Clone(clone));
+            CloneChartYear.Visibility=Visibility.Hidden;
         }
 
         private void Custom_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
