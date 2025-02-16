@@ -24,17 +24,11 @@
         </Border>
         <Border Grid.Column="0" Grid.Row="1">
             <StackPanel>
-                <Border x:Name="Product" Margin="10" Background="#F4E8D3" CornerRadius="15" MouseLeftButtonUp="Product_MouseLeftButtonUp">
-                    <Label Content="Выбор товара" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF43CE6D" FontSize="18"/>
-                </Border>
-                <Border x:Name="Shop" Margin="10" Background="#F4E8D3" CornerRadius="15" MouseLeftButtonUp="Shop_MouseLeftButtonUp">
-                    <Label Content="Выбор магазина" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF43CE6D" FontSize="18"/>
+                <Border x:Name="Product" Margin="10" Background="#F4E8D3" CornerRadius="15" MouseLeftButtonUp="Analytic_MouseLeftButtonUp">
+                    <Label Content="Аналитика" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF43CE6D" FontSize="18"/>
                 </Border>
                 <Border x:Name="Mounth" Margin="10" Background="#F4E8D3" CornerRadius="15" MouseLeftButtonUp="Mounth_MouseLeftButtonUp">
                     <Label Content="За месяц" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF43CE6D" FontSize="18"/>
-                </Border>
-                <Border x:Name="Quartal" Margin="10" Background="#F4E8D3" CornerRadius="15" MouseLeftButtonUp="Quartal_MouseLeftButtonUp">
-                    <Label Content="За квартал" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF43CE6D" FontSize="18"/>
                 </Border>
                 <Border x:Name="Year" Margin="10" Background="#F4E8D3" CornerRadius="15" MouseLeftButtonUp="Yaer_MouseLeftButtonUp">
                     <Label Content="За год" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF43CE6D" FontSize="18"/>
@@ -47,25 +41,15 @@
         <Border Grid.Column="1" Grid.Row="1">
             <ScrollViewer CanContentScroll="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                 <StackPanel x:Name="Zone">
-
+                    
                 </StackPanel>
             </ScrollViewer>
         </Border>
-        <StackPanel x:Name="CloneShop" Orientation="Vertical" Margin="5" Visibility="Hidden">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock x:Name="TB_Shop" Text="Магазин" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15" Foreground="#FF43CE6D" FontSize="24"/>
-                <ComboBox x:Name="CB_Shop" Margin="15" BorderBrush="#F4E8D3" Background="#F4E8D3" Foreground="#FF43CE6D" Width="450" FontSize="24"/>
-                <Border x:Name="SaveShop" Background="#F4E8D3" Margin="15" CornerRadius="10" HorizontalAlignment="Center" Width="150" Height="60" MouseLeftButtonUp="SaveProduct_MouseLeftButtonUp">
-                    <Label Content="Выбрать" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF43CE6D" FontSize="24"/>
-                </Border>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock x:Name="TB_Product" Text="Продукт" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15" Foreground="#FF43CE6D" FontSize="24"/>
-                <ComboBox x:Name="CB_Product" Margin="15" BorderBrush="#F4E8D3" Background="#F4E8D3" Foreground="#FF43CE6D" Width="450" FontSize="24"/>
-                <Border x:Name="Save" Background="#F4E8D3" Margin="15" CornerRadius="10" HorizontalAlignment="Center" Width="150" Height="60" MouseLeftButtonUp="SaveShop_MouseLeftButtonUp">
-                    <Label Content="Выбрать" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF43CE6D" FontSize="24"/>
-                </Border>
-            </StackPanel>
+        <StackPanel x:Name="CloneTender" Visibility="Hidden" Orientation="Vertical" Margin="5">
+            <TextBlock x:Name="TB_product" Text="Тенденция:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15" Foreground="#FF43CE6D" FontSize="24"/>
+            <TextBlock x:Name="CB_product" Margin="15" Background="#F4E8D3" Foreground="#FF43CE6D" Width="450" FontSize="24"/>
+            <TextBlock x:Name="TB_Shop" Text="Доход на 1 потраченный рубль:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15" Foreground="#FF43CE6D" FontSize="24"/>
+            <TextBlock x:Name="CB_Shop" Margin="15" Background="#F4E8D3" Foreground="#FF43CE6D" Width="450" FontSize="24"/>
         </StackPanel>
         <StackPanel x:Name="CloneChartMonth" Orientation="Vertical" Margin="5" Visibility="Hidden">
                 <chart:SfChart Height="450" Width="1100" Header="График продаж">
@@ -93,8 +77,8 @@
                 <chart:SfChart.SecondaryAxis>
                     <chart:NumericalAxis/>
                 </chart:SfChart.SecondaryAxis>
-                <chart:ColumnSeries  Label="Доход" ItemsSource="{Binding Year}" XBindingPath="Years" YBindingPath="ProductA"/>
-                <chart:ColumnSeries Label="Затраты" ItemsSource="{Binding Year}" XBindingPath="Years" YBindingPath="ProductB"/>
+                <chart:ColumnSeries  Label="Доход" ItemsSource="{Binding Year}" XBindingPath="Year" YBindingPath="ProductA"/>
+                <chart:ColumnSeries Label="Затраты" ItemsSource="{Binding Year}" XBindingPath="Year" YBindingPath="ProductB"/>
             </chart:SfChart>
         </StackPanel>
     </Grid>

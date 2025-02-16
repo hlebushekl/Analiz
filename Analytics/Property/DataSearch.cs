@@ -1,20 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
-
 namespace Analytics.Property
 {
     public class DataYear
     {
         public static int Years = 2025;
-        public static int YearSerchProductA() 
+        public static int YearSerchProductA()
         {
             int result = 0;
             DataTable dataTable = DataSerch.Year(Years);
-            for (int i = 0; DataSerch.LenghtYear(2025) > i; i++) 
+            for (int i = 0; DataSerch.LenghtYear(2025) > i; i++)
                 result += Convert.ToInt32(dataTable.Rows[i][4]);
             return result;
         }
@@ -220,6 +215,13 @@ namespace Analytics.Property
             for (int i = 0; DataSerch.Lenght(12) > i; i++)
                 result += Convert.ToInt32(dataTable.Rows[i][5]);
             return result;
+        }
+    }
+    public class Analytic
+    {
+        public static double AnalyticYear()
+        {
+            double result = DataYear.YearSerchProductA() / DataYear.YearSerchProductB(); return result;
         }
     }
 }
